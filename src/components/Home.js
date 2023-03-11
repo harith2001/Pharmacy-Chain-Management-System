@@ -24,7 +24,6 @@ const Home = () => {
       <td>jjjjj</td>
       <td>kkkkk</td>
       <td className ="d-flex justify-content-between">
-        <button className ="btn btn-success">View</button>
         <button className ="btn btn-primary">Update</button>
         <button className ="btn btn-danger">Detele</button>
       </td>
