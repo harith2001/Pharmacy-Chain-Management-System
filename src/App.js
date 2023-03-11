@@ -4,13 +4,16 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 import Navbaar from './components/Navbaar';
 import Home from './components/Home';
 import Insert from './components/Insert';
+import {Routes,Route} from "react-router-dom"
 
 function App() {
   return (
     <>
     <Navbaar/>
-    <Home/>
-    <Insert/>
+    <Routes>
+    <Route path='/' Component={Home}/>
+    <Route path='/Insert' Component={Insert}/>
+    </Routes>
     </>
   );
 }

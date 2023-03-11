@@ -15,17 +15,14 @@ const Navbaar = () => {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
-        </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Stock
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Insert New Stock</a></li>
+            <li><a className="dropdown-item" href="/Insert">Insert New Stock</a></li>
             <li><a className="dropdown-item" href="#">Stock Alert</a></li>
-            <li><a className="dropdown-item" href="#">Stock Details</a></li>
+            <li><a className="dropdown-item" href="/">Stock Details</a></li>
           </ul>
         </li>
       </ul>
