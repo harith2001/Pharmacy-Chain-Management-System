@@ -5,6 +5,7 @@ import Navbaar from './components/Navbaar';
 import Home from './components/Home';
 import Insert from './components/Insert';
 import Edit from './components/Edit';
+import Details from './components/Details';
 import {Routes,Route} from "react-router-dom"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Route path='/' Component={Home}/>
     <Route path='/Insert' Component={Insert}/>
     <Route path='/Edit/:id' Component={Edit}/>
+    <Route path ='/view/:id' Component={Details}/>
     </Routes>
     </>
   );

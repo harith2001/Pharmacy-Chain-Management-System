@@ -22,6 +22,34 @@ const Insert = () => {
     })
   }
   
+  const addinpdata = async(e)=>{
+    e.preventDefault();
+
+    const{ Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date} = inpval;
+
+    const res = await fetch("/Insert", {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date
+      })
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status ===404|| !data){
+      alert("error");
+      console.log("error");
+    }else{
+      alert("data added ");
+      console.log("data added");
+    }
+
+  }
+
   return (
     <div className='container'>
 
@@ -50,7 +78,7 @@ const Insert = () => {
   </div>
 <br></br>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Add New Stock </button>
+    <button type="submit" onClick={addinpdata} class="btn btn-primary">Add New Stock </button>
   </div>
 </form>
 
