@@ -1,6 +1,32 @@
-import React from 'react'
+import React, { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Details = () => {
+
+  const {id} = useParams("");
+  console.log(id);
+
+  /*
+  const getpdata = async(e)=>{
+
+    const res = await fetch("/getstock", {
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status ===422|| !data){
+      console.log("error");
+    }else{
+      setStockdata(data)
+      console.log("get data ");
+    }
+  } 
+*/
   return (
     <div className='container mb-3 '>
         <br></br>
@@ -20,18 +46,28 @@ const Details = () => {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>jjjjj</td>
-      <td>kkkkk</td>
+    {
+  /*getstockdata.map((element,id)=>{
+        return(
+          <>
+              <tr>
+      <th scope="row">{id+1}</th>
+      <td>{element.Medicine_ID}</td>
+      <td>{element.Name}</td>
+      <td>{element.Medicine_NO}</td>
+      <td>{element.Expire_Date}</td>
+      <td>{element.Purchased_Date}</td>
+
       <td className ="d-flex justify-content-between">
         <button className ="btn btn-primary">Update</button>
         <button className ="btn btn-danger">Detele</button>
       </td>
     </tr>
+          </>
+        )
+
+      })*/
+    }
   </tbody>
 </table>
     </div>

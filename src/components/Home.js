@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from "react";
+import { NavLink } from "react-router-dom";
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
     const data = await res.json();
     console.log(data);
 
-    if (res.status ===404|| !data){
+    if (res.status ===422|| !data){
       console.log("error");
     }else{
       setStockdata(data)
@@ -33,6 +34,9 @@ const Home = () => {
 
   return (
   <div className ="container">
+
+<h1 style={{fontWeight:400}}>Stock Details</h1>
+
 <br></br>
 <br></br>
 <table className="table">
@@ -47,7 +51,6 @@ const Home = () => {
     </tr>
   </thead>
   <tbody>
-
     {
       getstockdata.map((element,id)=>{
         return(
@@ -61,7 +64,7 @@ const Home = () => {
       <td>{element.Purchased_Date}</td>
 
       <td className ="d-flex justify-content-between">
-        <button className ="btn btn-success">view</button>
+        <NavLink to ={'/view/${element._id}'}><button className ="btn btn-success">view</button></NavLink>
         <button className ="btn btn-primary">Update</button>
         <button className ="btn btn-danger">Detele</button>
       </td>
