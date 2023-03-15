@@ -32,6 +32,25 @@ const Home = () => {
   },[])
 
 
+  const deletestock =async (id)=>{
+    const res2 = await fetch(`/deletestock/${id}`,{
+      method:"DELETE",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    });
+    const deletedata = await res2.json();
+    console.log(deletedata);
+
+    if(res2.status===422||!deletedata){
+      console.log("error");
+    }else{
+      alert("Stock Data Deleted");
+      console.log("stock deleted ");
+      getpdata();
+    }
+  }
+
   return (
   <div className ="container">
 
@@ -64,9 +83,9 @@ const Home = () => {
       <td>{element.Purchased_Date}</td>
 
       <td className ="d-flex justify-content-between">
-        <NavLink to ={'/view/${element._id}'}><button className ="btn btn-success">view</button></NavLink>
-        <button className ="btn btn-primary">Update</button>
-        <button className ="btn btn-danger">Detele</button>
+        <NavLink to ={`view/${element._id}`}><button className ="btn btn-success">view</button></NavLink>
+        <NavLink to ={`Edit/${element._id}`}><button className ="btn btn-primary">Update</button></NavLink>
+        <button className ="btn btn-danger" onClick={()=>deletestock(element._id)}>Detele</button>
       </td>
     </tr>
           </>

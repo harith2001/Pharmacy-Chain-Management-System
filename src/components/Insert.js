@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import{useNavigate} from 'react-router-dom'
 
 const Insert = () => {
+
+  const navigate = useNavigate();
+
   const[inpval,setINP] = useState(
     {
       Medicine_ID :"",
@@ -45,7 +49,9 @@ const Insert = () => {
       console.log("error");
     }else{
       alert("data added ");
+      navigate("/")
       console.log("data added");
+
     }
 
   }

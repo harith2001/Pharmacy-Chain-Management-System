@@ -1,15 +1,20 @@
 import React, { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Details = () => {
 
+  const navigate = useNavigate();
+
+  const [getstockdata, setStockdata] = useState([]);
+  console.log(getstockdata);
+
   const {id} = useParams("");
   console.log(id);
+  
+  const getdata = async(e)=>{
 
-  /*
-  const getpdata = async(e)=>{
-
-    const res = await fetch("/getstock", {
+    const res = await fetch(`/getstock/${id}`, {
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -26,7 +31,31 @@ const Details = () => {
       console.log("get data ");
     }
   } 
-*/
+
+  useEffect(()=>{
+    getdata();
+  },[])
+
+  const deletestock =async (id)=>{
+    const res2 = await fetch(`/deletestock/${id}`,{
+      method:"DELETE",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    });
+    const deletedata = await res2.json();
+    console.log(deletedata);
+
+    if(res2.status===422||!deletedata){
+      console.log("error");
+    }else{
+      alert("Stock Data Deleted");
+      navigate("/")
+      console.log("stock deleted ");
+      getdata();
+    }
+  }
+
   return (
     <div className='container mb-3 '>
         <br></br>
@@ -37,7 +66,6 @@ const Details = () => {
 <table class="table">
   <thead>
     <tr className ="table-dark">
-      <th scope="col">#</th>
       <th scope="col">Medicine ID</th>
       <th scope="col">Medicine Name</th>
       <th scope="col">Number of Medicine</th>
@@ -46,32 +74,24 @@ const Details = () => {
     </tr>
   </thead>
   <tbody>
-    {
-  /*getstockdata.map((element,id)=>{
-        return(
           <>
               <tr>
-      <th scope="row">{id+1}</th>
-      <td>{element.Medicine_ID}</td>
-      <td>{element.Name}</td>
-      <td>{element.Medicine_NO}</td>
-      <td>{element.Expire_Date}</td>
-      <td>{element.Purchased_Date}</td>
+      <td>{getstockdata.Medicine_ID}</td>
+      <td>{getstockdata.Name}</td>
+      <td>{getstockdata.Medicine_NO}</td>
+      <td>{getstockdata.Expire_Date}</td>
+      <td>{getstockdata.Purchased_Date}</td>
 
       <td className ="d-flex justify-content-between">
-        <button className ="btn btn-primary">Update</button>
-        <button className ="btn btn-danger">Detele</button>
+      <NavLink to ={`/Edit/${getstockdata._id}`}><button className ="btn btn-primary">Update</button></NavLink>
+       <button className ="btn btn-danger" onClick={()=>deletestock(getstockdata._id)}>Detele</button>
       </td>
     </tr>
           </>
-        )
-
-      })*/
-    }
-  </tbody>
-</table>
+    </tbody>  
+    </table>
     </div>
-  )
-}
+
+)}
 
 export default Details

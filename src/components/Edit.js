@@ -1,6 +1,12 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
+import {useParams,useNavigate} from "react-router-dom";
 
 const Edit = () => {
+
+  //const [getstockdata, setStockdata] = useState([]);
+  //console.log(getstockdata);
+
+  const navigate = useNavigate();
 
     const[inpval,setINP] = useState(
         {
@@ -23,8 +29,62 @@ const Edit = () => {
         })
       }
 
+      const {id} = useParams("");
+      console.log(id);
+      
+      const getdata = async(e)=>{
+    
+        const res = await fetch(`/getstock/${id}`, {
+          method:"GET",
+          headers:{
+            "Content-Type":"application/json"
+          }
+        });
+    
+        const data = await res.json();
+        console.log(data);
+    
+        if (res.status ===422|| !data){
+          console.log("error");
+        }else{
+          setINP(data)
+          console.log("get data ");
+        }
+      } 
 
-  return (
+      useEffect(()=>{
+        getdata();
+      },[]);
+
+      const updatestock = async(e)=>{
+        e.preventDefault();
+
+        const{Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date} = inpval;
+
+        const res2 = await fetch(`/updatestock/${id}`,{
+
+          method:"PATCH",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify({
+            Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date
+          })
+
+        });
+
+        const data2 = await res2.json();
+        console.log(data2);
+
+        if(res2.status === 422||!data2){
+          alert("fill the data")
+        }else{
+          alert("data added")
+          navigate("/")
+        }
+      }
+
+    return (
     <div className='container'>
 
     <br></br>
@@ -52,7 +112,7 @@ const Edit = () => {
       </div>
     <br></br>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add New Stock </button>
+        <button type="submit" onClick={updatestock} class="btn btn-primary">Update Stock </button>
       </div>
     </form>
     
