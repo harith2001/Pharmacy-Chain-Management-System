@@ -56,6 +56,10 @@ const Details = () => {
     }
   }
 
+     
+  const date1 = String(getstockdata.Expire_Date).split("T")[0];
+  const date2 = String(getstockdata.Purchased_Date).split("T")[0];
+
   return (
     <div className='container mb-3 '>
         <br></br>
@@ -74,17 +78,17 @@ const Details = () => {
     </tr>
   </thead>
   <tbody>
+       
           <>
               <tr>
       <td>{getstockdata.Medicine_ID}</td>
       <td>{getstockdata.Name}</td>
       <td>{getstockdata.Medicine_NO}</td>
-      <td>{getstockdata.Expire_Date}</td>
-      <td>{getstockdata.Purchased_Date}</td>
-
+      <td>{date1}</td>
+      <td>{date2}</td>
       <td className ="d-flex justify-content-between">
       <NavLink to ={`/Edit/${getstockdata._id}`}><button className ="btn btn-primary">Update</button></NavLink>
-       <button className ="btn btn-danger" onClick={()=>deletestock(getstockdata._id)}>Detele</button>
+       <button className ="btn btn-danger" onClick={()=>deletestock(getstockdata._id)}>Delete</button>
       </td>
     </tr>
           </>

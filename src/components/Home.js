@@ -51,13 +51,11 @@ const Home = () => {
     }
   }
 
+
   return (
-  <div className ="container">
+    
+  <div className ="home">
 
-<h1 style={{fontWeight:400}}>Stock Details</h1>
-
-<br></br>
-<br></br>
 <table className="table">
   <thead>
     <tr className ="table-dark">
@@ -72,21 +70,17 @@ const Home = () => {
   <tbody>
     {
       getstockdata.map((element,id)=>{
+        const date1 = element.Expire_Date.split("T")[0];
+        const date2 = element.Purchased_Date.split("T")[0];
         return(
           <>
               <tr>
       <th scope="row">{id+1}</th>
       <td>{element.Medicine_ID}</td>
-      <td>{element.Name}</td>
+      <td><NavLink to ={`view/${element._id}`}>{element.Name}</NavLink></td>
       <td>{element.Medicine_NO}</td>
-      <td>{element.Expire_Date}</td>
-      <td>{element.Purchased_Date}</td>
-
-      <td className ="d-flex justify-content-between">
-        <NavLink to ={`view/${element._id}`}><button className ="btn btn-success">view</button></NavLink>
-        <NavLink to ={`Edit/${element._id}`}><button className ="btn btn-primary">Update</button></NavLink>
-        <button className ="btn btn-danger" onClick={()=>deletestock(element._id)}>Detele</button>
-      </td>
+      <td>{date1}</td>
+      <td>{date2}</td>
     </tr>
           </>
         )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import{useNavigate} from 'react-router-dom'
+import{NavLink, useNavigate} from 'react-router-dom'
 
 const Insert = () => {
 
@@ -45,7 +45,7 @@ const Insert = () => {
     console.log(data);
 
     if (res.status ===422|| !data){
-      alert("error");
+      alert("error: Insert data ");
       console.log("error");
     }else{
       alert("data added ");
@@ -57,7 +57,7 @@ const Insert = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='insert'>
 
 <br></br>
 <br></br>
@@ -83,8 +83,9 @@ const Insert = () => {
     <input type="date" class="form-control" value={inpval.Purchased_Date} onChange={setdata} id="Purchased_Date"/>
   </div>
 <br></br>
-  <div class="col-12">
-    <button type="submit" onClick={addinpdata} class="btn btn-primary">Add New Stock </button>
+  <div class="submit">
+    <button type="submit" onClick={addinpdata} class="btn btn-success">Submit</button>
+    <NavLink to = {`/`}><button class="btn btn-danger">Cancel</button></NavLink>
   </div>
 </form>
 
