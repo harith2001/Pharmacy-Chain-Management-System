@@ -1,15 +1,20 @@
 import React, { useEffect,useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
+const Details = () => {
 
-const Home = () => {
+  const navigate = useNavigate();
 
   const [getstockdata, setStockdata] = useState([]);
   console.log(getstockdata);
 
-  const getpdata = async(e)=>{
+  const {id} = useParams("");
+  console.log(id);
+  
+  const getdata = async(e)=>{
 
-    const res = await fetch("/getdata", {
+    const res = await fetch(`/getstock/${id}`, {
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -28,9 +33,8 @@ const Home = () => {
   } 
 
   useEffect(()=>{
-    getpdata();
+    getdata();
   },[])
-
 
   const deletestock =async (id)=>{
     const res2 = await fetch(`/deletestock/${id}`,{
@@ -46,20 +50,22 @@ const Home = () => {
       console.log("error");
     }else{
       alert("Stock Data Deleted");
+      navigate("/")
       console.log("stock deleted ");
-      getpdata();
+      getdata();
     }
   }
 
+     
+  const date1 = String(getstockdata.Expire_Date).split("T")[0];
+  const date2 = String(getstockdata.Purchased_Date).split("T")[0];
 
   return (
-    
-  <div className ="home">
-
-<table className="table">
+    <div className='details'>
+      
+<table class="table">
   <thead>
     <tr className ="table-dark">
-      <th scope="col">NO</th>
       <th scope="col">Medicine ID</th>
       <th scope="col">Medicine Name</th>
       <th scope="col">Number of Medicine</th>
@@ -68,28 +74,24 @@ const Home = () => {
     </tr>
   </thead>
   <tbody>
-    {
-      getstockdata.map((element,id)=>{
-        const date1 = element.Expire_Date.split("T")[0];
-        const date2 = element.Purchased_Date.split("T")[0];
-        return(
+       
           <>
               <tr>
-      <th scope="row">{id+1}</th>
-      <td>{element.Medicine_ID}</td>
-      <td><NavLink to ={`view/${element._id}`}>{element.Name}</NavLink></td>
-      <td>{element.Medicine_NO}</td>
+      <td>{getstockdata.Medicine_ID}</td>
+      <td>{getstockdata.Name}</td>
+      <td>{getstockdata.Medicine_NO}</td>
       <td>{date1}</td>
       <td>{date2}</td>
+      <td className ="d-flex justify-content-between">
+      <NavLink to ={`/Edit/${getstockdata._id}`}><button className ="btn btn-primary">Update</button></NavLink>
+       <button className ="btn btn-danger" onClick={()=>deletestock(getstockdata._id)}>Delete</button>
+      </td>
     </tr>
           </>
-        )
-      })
-    }
-  </tbody>
-</table>
+    </tbody>  
+    </table>
+    </div>
 
-  </div>);
-};
+)}
 
-export default Home;
+export default Details

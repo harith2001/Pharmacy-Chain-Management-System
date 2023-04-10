@@ -85,7 +85,7 @@ const Edit = () => {
       }
 
     return (
-    <div className='container'>
+    <div className='edit'>
 
     <br></br>
     <br></br>

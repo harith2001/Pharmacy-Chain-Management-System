@@ -41,7 +41,7 @@
 /*table CSS*/
 
 .home{
-    margin-left: 200px;
+    margin-left: 220px;
 }
 .table{
     margin-top: 200px;
@@ -109,4 +109,28 @@ th,td{
 .submit{
     display: inline-block;
     margin-right: 10px;
+    align-items: center;
+}
+
+/*details Page CSS */
+
+.details{
+    margin-left: 220px ;
+    margin-top: 0;
+    align-items: center;
+}
+
+
+/* Edit/Update Page CSS*/
+.edit{
+    margin-left: 220px ;
+    margin-top: 150px;
+    align-items: center;
+}
+
+/* PDF Button*/
+.PDF{
+    margin-left :550px;
+    margin-top: 150px;
+    
 }

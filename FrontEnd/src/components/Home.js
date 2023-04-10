@@ -1,20 +1,16 @@
 import React, { useEffect,useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import FileSaver from 'file-saver';
 
-const Details = () => {
-
-  const navigate = useNavigate();
+const Home = () => {
 
   const [getstockdata, setStockdata] = useState([]);
   console.log(getstockdata);
 
-  const {id} = useParams("");
-  console.log(id);
-  
-  const getdata = async(e)=>{
+//Get Stock Data Fucntion 
+  const getpdata = async(e)=>{
 
-    const res = await fetch(`/getstock/${id}`, {
+    const res = await fetch("/getdata", {
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -33,8 +29,10 @@ const Details = () => {
   } 
 
   useEffect(()=>{
-    getdata();
+    getpdata();
   },[])
+
+//Detele Stock Fucntion
 
   const deletestock =async (id)=>{
     const res2 = await fetch(`/deletestock/${id}`,{
@@ -50,26 +48,30 @@ const Details = () => {
       console.log("error");
     }else{
       alert("Stock Data Deleted");
-      navigate("/")
       console.log("stock deleted ");
-      getdata();
+      getpdata();
     }
   }
 
-     
-  const date1 = String(getstockdata.Expire_Date).split("T")[0];
-  const date2 = String(getstockdata.Purchased_Date).split("T")[0];
+//PDF Genarate
 
-  return (
-    <div className='container mb-3 '>
-        <br></br>
-        <h1 style={{fontWeight:400}}>Medicine Details</h1>
+const handleDownloadClick =() => {
+  fetch('/generate-pdf')
+  .then (response => response.blob())
+  .then (blob => {
+    FileSaver.saveAs(blob,'example.pdf');
+  });
+};
 
-        <br></br>
-<br></br>
-<table class="table">
+
+return (
+    
+  <div className ="home">
+
+<table className="table">
   <thead>
     <tr className ="table-dark">
+      <th scope="col">NO</th>
       <th scope="col">Medicine ID</th>
       <th scope="col">Medicine Name</th>
       <th scope="col">Number of Medicine</th>
@@ -78,24 +80,30 @@ const Details = () => {
     </tr>
   </thead>
   <tbody>
-       
+    {
+      getstockdata.map((element,id)=>{
+        const date1 = element.Expire_Date.split("T")[0];
+        const date2 = element.Purchased_Date.split("T")[0];
+        return(
           <>
               <tr>
-      <td>{getstockdata.Medicine_ID}</td>
-      <td>{getstockdata.Name}</td>
-      <td>{getstockdata.Medicine_NO}</td>
+      <th scope="row">{id+1}</th>
+      <td>{element.Medicine_ID}</td>
+      <td><NavLink to ={`view/${element._id}`}>{element.Name}</NavLink></td>
+      <td>{element.Medicine_NO}</td>
       <td>{date1}</td>
       <td>{date2}</td>
-      <td className ="d-flex justify-content-between">
-      <NavLink to ={`/Edit/${getstockdata._id}`}><button className ="btn btn-primary">Update</button></NavLink>
-       <button className ="btn btn-danger" onClick={()=>deletestock(getstockdata._id)}>Delete</button>
-      </td>
     </tr>
           </>
-    </tbody>  
-    </table>
-    </div>
+        )
+      })
+    }
+  </tbody>
+</table>
+<div className='PDF'>
+<button onClick={handleDownloadClick}>Genarate Report</button></div>
 
-)}
+  </div>);
+};
 
-export default Details
+export default Home;
