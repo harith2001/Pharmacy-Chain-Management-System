@@ -38,6 +38,12 @@
     background-color:#b3f1c4;
 }
 
+.VNavbaar img{
+      
+    height:100px;
+    width:120px;
+}
+
 /*table CSS*/
 
 .home{
@@ -133,4 +139,29 @@ th,td{
     margin-left :550px;
     margin-top: 150px;
     
+}
+
+/*Search*/
+.search{
+    margin-top:100px;
+    margin-left: 300px;
+}
+
+.Stable{
+
+    display: inline-block;  
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+}
+
+th,td{
+    padding: 8px;
+    text-align: left;
+    align-items: center;
+}
+th{
+    background-color: #1a1919;
+    align-items: center;
 }

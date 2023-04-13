@@ -63,6 +63,21 @@ const handleDownloadClick =() => {
   });
 };
 
+//Low Stock Notification
+
+const Low_Stock = 100;
+
+const checkStock = async()=>{
+  const Stock = await Stock.find();
+
+  Stock.forEach(getstockdata =>{
+    if (getstockdata.Medicine_NO <Low_Stock){
+      alert(`Low Stock Alert : ${getstockdata.Medicine_ID} has only ${getstockdata.Medicine_NO} units remaining !`);
+    }
+  });
+}
+
+setInterval(checkStock,3600000);
 
 return (
     

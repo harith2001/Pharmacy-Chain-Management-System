@@ -29,6 +29,6 @@ app.get('/generate-pdf',(req,res)=>{
     res.setHeader('Content-type','application/pdf');
     doc.pipe(res);
 
-    doc.text('hello, world !');
+    doc.text('Hello World');
     doc.end();
 });

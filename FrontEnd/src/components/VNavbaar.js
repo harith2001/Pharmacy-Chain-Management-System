@@ -1,4 +1,5 @@
 import React from 'react'
+import Logo from '../Images/Logo.png'
 
 
 const VNavbaar = () => {
@@ -6,7 +7,7 @@ const VNavbaar = () => {
     <body>
   <div className="VNavbaar">
     <ul>
-          <li><img src = {process.env.PUBLIC_URL + '../public/icon.png'} alt="icon"/></li>
+          <li><img src={Logo}/></li>
           <li> <a href="/">DashBoard</a></li>
           <li> <a href="/">Stock</a></li> 
           <li> <a href="#">Finance</a></li> 
