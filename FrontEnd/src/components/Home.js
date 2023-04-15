@@ -47,7 +47,7 @@ const Home = () => {
   },[])
 
  //PDF Generate
-
+//
   const componentPDF = useRef();
   const generatePDF = useReactToPrint({
     content:()=> componentPDF.current,
