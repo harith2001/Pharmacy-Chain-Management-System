@@ -1,13 +1,16 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState,useRef } from "react";
 import { NavLink } from "react-router-dom";
-import FileSaver from 'file-saver';
+import { useReactToPrint } from "react-to-print";
+
 
 const Home = () => {
 
   const [getstockdata, setStockdata] = useState([]);
   console.log(getstockdata);
 
-//Get Stock Data Fucntion 
+  const Low_Stock = 100;
+
+ //Get Stock Data Fucntion 
   const getpdata = async(e)=>{
 
     const res = await fetch("/getdata", {
@@ -24,66 +27,44 @@ const Home = () => {
       console.log("error");
     }else{
       setStockdata(data)
-      console.log("get data ");
+      //console.log("get data ");
     }
+
+   // Low Stock Alert Function for Manage The Stock Levels
+
+    getstockdata.forEach(data => {
+      if(data.Medicine_NO<Low_Stock){
+        alert (`Low Stock alert : ${data.Medicine_ID} has only : ${data.Medicine_NO} units Remaining Please Re-Order !`);
+        //console.log("alert");
+      }
+      
+    });
+    
   } 
 
   useEffect(()=>{
     getpdata();
   },[])
 
-//Detele Stock Fucntion
+ //PDF Generate
 
-  const deletestock =async (id)=>{
-    const res2 = await fetch(`/deletestock/${id}`,{
-      method:"DELETE",
-      headers:{
-        "Content-Type":"application/json"
-      }
-    });
-    const deletedata = await res2.json();
-    console.log(deletedata);
-
-    if(res2.status===422||!deletedata){
-      console.log("error");
-    }else{
-      alert("Stock Data Deleted");
-      console.log("stock deleted ");
-      getpdata();
-    }
-  }
-
-//PDF Genarate
-
-const handleDownloadClick =() => {
-  fetch('/generate-pdf')
-  .then (response => response.blob())
-  .then (blob => {
-    FileSaver.saveAs(blob,'example.pdf');
+  const componentPDF = useRef();
+  const generatePDF = useReactToPrint({
+    content:()=> componentPDF.current,
+    documentTitle:"Stock Details",
+    onAfterPrint:()=>alert("Data Printed in PDF")
   });
-};
 
-//Low Stock Notification
+ setInterval(getpdata,300000); 
 
-const Low_Stock = 100;
+ return (
 
-const checkStock = async()=>{
-  const Stock = await Stock.find();
-
-  Stock.forEach(getstockdata =>{
-    if (getstockdata.Medicine_NO <Low_Stock){
-      alert(`Low Stock Alert : ${getstockdata.Medicine_ID} has only ${getstockdata.Medicine_NO} units remaining !`);
-    }
-  });
-}
-
-setInterval(checkStock,3600000);
-
-return (
-    
   <div className ="home">
+<div ref ={componentPDF} style={{width:'100%'}}>
 
-<table className="table">
+  <h2 className="h2">Stock Details</h2>
+
+ <table className="table">
   <thead>
     <tr className ="table-dark">
       <th scope="col">NO</th>
@@ -96,9 +77,10 @@ return (
   </thead>
   <tbody>
     {
-      getstockdata.map((element,id)=>{
-        const date1 = element.Expire_Date.split("T")[0];
-        const date2 = element.Purchased_Date.split("T")[0];
+     getstockdata.map((element,id)=>{
+
+        const date1 = String(element.Expire_Date).split("T")[0];
+        const date2 = String(element.Purchased_Date).split("T")[0];
         return(
           <>
               <tr>
@@ -111,13 +93,14 @@ return (
     </tr>
           </>
         )
-      })
+      }) 
     }
   </tbody>
-</table>
-<div className='PDF'>
-<button onClick={handleDownloadClick}>Genarate Report</button></div>
-
+  </table>
+  </div>
+  <div className='PDF'>
+  <button onClick={generatePDF}>Genarate Report</button></div>
+ 
   </div>);
 };
 

@@ -40,7 +40,7 @@ router.post("/Insert",async(req,res)=>{
    }
 })
 
-//get stock data
+//get all stock data
 // In this we can send get request and get all available data in the database
 
 router.get("/getdata",async(req,res)=>{
@@ -54,7 +54,7 @@ router.get("/getdata",async(req,res)=>{
     }
 })
 
-//get individual stock details
+//get individual for stock details
 //In this we will able to send a get request with specific ID and get the specific ID date from the database
 
 router.get("/getstock/:id",async(req,res)=>{
@@ -117,6 +117,29 @@ router.get("/searchdata/:Medicine_ID",async(req,res)=>{
         res.status(422).json(error)
     }
 })
+
+//Low Stock Notification 
+
+/*const Low_Stock = 100;
+router.get("/lowalert",async(req,res)=>{
+    try {
+   
+        const stockalert = await Stock.find();
+        console.log(stockalert);
+
+        stockalert.forEach( stockalert =>{
+            if(stockalert.Medicine_NO<Low_Stock){
+                console.log("low stock alert :${stockalert.Medicine_ID}");
+            }  
+        });
+        res.status(201).json(stockalert)
+
+    } catch (error) {
+            res.status(422).json(error)     
+    }
+})
+*/
+
 
 
 module.exports = router;

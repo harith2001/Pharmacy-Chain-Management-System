@@ -6,9 +6,10 @@
 
 /* Vertical Navigation Bar CSS*/
 .VNavbaar{
+    
     display: flex;
     flex-direction: column;
-    height: 100vh ;
+    min-height: 100vh;
     width: 200px;
     position: absolute;
     background-color: #042c35;
@@ -45,7 +46,10 @@
 }
 
 /*table CSS*/
-
+.h2{
+    margin-left: 220px;
+    margin-top: 200px;
+}
 .home{
     margin-left: 220px;
 }
@@ -71,7 +75,7 @@ th,td{
     display: flex;
     background-color: #d9d9d9;
     height: 150px;
-    min-width: 83.5%;
+    min-width: 84.5%;
     margin-left: 200px;
     position: absolute;
     align-items: center;
@@ -98,11 +102,6 @@ th,td{
 .HNavbaar a:hover{
     background-color: #ddd;
 }
-
-/* Horizontal Navigation Bar Button CSS*/
-
-
-
 
 
 /*Insert Page CSS*/
@@ -137,7 +136,7 @@ th,td{
 /* PDF Button*/
 .PDF{
     margin-left :550px;
-    margin-top: 150px;
+    margin-top: 70px;
     
 }
 

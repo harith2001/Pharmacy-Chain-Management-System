@@ -10,7 +10,6 @@ const HNavbaar = () => {
           <h2>Stock Inventory System</h2><br></br>
 
           <li> <a href="/Insert"><button className='add'>+ Add </button></a></li>
-          <li> <a href="/"><button className='alert'> Alert </button></a></li> 
           <li>
             <NavLink to = {`Search`}>
              <button type='submit' >Search</button></NavLink>

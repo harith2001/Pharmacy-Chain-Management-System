@@ -68,7 +68,7 @@ const Search = () => {
           <>
             <tr>
               <td>{getsearchdata.Medicine_ID}</td>
-              <td>{getsearchdata.Name}</td>
+              <td><NavLink to={`/view/${getsearchdata._id}`}>{getsearchdata.Name}</NavLink></td>
               <td>{getsearchdata.Medicine_NO}</td>
               <td>{date1}</td>
               <td>{date2}</td>
