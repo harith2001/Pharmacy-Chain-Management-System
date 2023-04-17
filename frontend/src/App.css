@@ -1,0 +1,70 @@
+.app{
+    display: flex; 
+    flex-direction: row; 
+}
+
+/* Vertical Navigation Bar CSS*/
+.VNavbaar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh ;
+    width: 200px;
+    position: absolute;
+    background-color: #042c35;
+    padding-top: 60px;
+    bottom: 0;
+   
+}
+
+.VNavbaar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.VNavbaar li{
+    text-align: center;
+    border-bottom: 1px soild #ddd;
+}
+
+.VNavbaar li a{
+    margin-top: 10px;
+    display: block;
+    color:#eeebeb;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.VNavbaar a:hover{
+    background-color:#b3f1c4;
+}
+
+.VNavbaar img{
+    margin-top: 10px;
+    height: 100px;
+    width: 120px;
+}
+
+/*table CSS*/
+
+
+
+/*Horizontal Navigation bar CSS*/
+
+
+/* Horizontal Navigation Bar Button CSS*/
+
+
+
+
+/*Insert Page CSS*/
+.insert{
+    margin-left: 220px ;
+    margin-top: 150px;
+    align-items: center;
+}
+
+.submit{
+    display: inline-block;
+    margin-right: 10px;
+}

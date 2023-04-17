@@ -1,0 +1,51 @@
+.chart-container{
+    /*border: 10px;
+    border-style: solid;
+    border-color: black;*/
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgb(232, 230, 230);
+    background-color: rgb(241, 246, 242);
+    margin-top: 20px;
+    margin-left: 220px;
+    width: 1200px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container-header{
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+
+.h4{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.dropdown-container{
+    margin-top: 30px;
+    margin-left: 900px;
+    padding: 5px;
+}
+
+.label{
+    font-family: monospace;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.select{
+    margin-left: 10px;
+    background-color: white;
+}
+
+.chart-container-body{
+    height: 400px;
+    width: 1000px;
+    margin-left: 50px;
+}
+
+

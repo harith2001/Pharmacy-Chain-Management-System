@@ -1,0 +1,48 @@
+.sales-card-container{
+    display: flex;
+    flex-direction: row;
+    /*border: 5px;
+    border-style: solid;
+    border-color: black;*/
+    margin-top: 10px;
+    margin-left: 200px;
+    width: 1230px;
+}
+
+.sub-sales-container{
+    display: inline-flex;
+    height: 100%;
+    width: 30%;
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgb(232, 230, 230);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.display-text{
+    font-family: monospace;
+    font-size:large;
+}
+
+.display-text-color1{
+    background-color: #ffede8; 
+}
+
+.display-text-color2{
+    background-color: #e3eeff; 
+}
+
+.display-text-color3{
+    background-color: #d4f2df;
+}
+
+.display-value{
+    margin-left: 50px;
+    height: 40px;
+    width: 150px;
+}

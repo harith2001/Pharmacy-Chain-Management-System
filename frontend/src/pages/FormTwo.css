@@ -1,0 +1,87 @@
+.container{
+    margin-top: 30px;
+}
+
+.form{
+    margin-left: 230px;
+    margin-top: 10px;
+    background-color: rgb(228, 230, 229);
+    border-width: 2px;
+    border-style: dotted;
+    border-color: rgb(195, 197, 196);
+    height: 250px;
+    width: 1180px;
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.img-upload{
+    height: 40px;
+    width: 30px;
+    margin-top: 40px;
+    /* margin-left: 560px; */
+}
+
+.viewer{
+    margin-left: 500px;
+}
+
+.label{
+    margin-top: 10px;
+}
+
+.h5{
+    /* margin-left: 500px; */
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(129, 129, 129);
+    margin-top: 10px;
+}
+
+.form-btn-container{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 500px;
+    margin-left: 300px;
+    align-items: center;
+}
+
+/* .file-btn-control{
+    height: 100px;
+    width: 400px;
+} */
+
+.file-btn{
+    height: 100px;
+    width: 120px;
+    background-color: #042c35;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.form-control{
+    background-color: #49be69;
+    height: 40px;
+    width: 120px;
+}
+
+.h5-2{
+    margin-left: 500px;
+}
+
+.btn-success{
+    background-color: #5cb3f6;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    height: 40px;
+    width: 120px;
+    margin-top: 5px;
+    margin-left: 1060px;
+}

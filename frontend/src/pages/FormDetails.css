@@ -1,0 +1,84 @@
+.table-container{
+    height: 100%;
+    width: 82%;
+    margin-left: 220px;
+    margin-top: 20px;
+}
+
+.d-flex{
+    margin-left: 3px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar{
+    height: 30px;
+    width: 250px;
+    background-color: rgb(241, 240, 240);
+}
+
+.btn-search{
+    background-color: #ddd;
+}
+
+.radio-btn-container{
+   margin-left: 20px; 
+   margin-top: 5px;
+   display: flex;
+   flex-direction: row;
+}
+
+.radio-btn{
+    font-size: small;
+    padding-bottom: 2px;
+}
+
+.table{
+    border-collapse: collapse ;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.table-head{
+    background-color: #262626;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.th{
+    font-size: 15px;
+    font-family: monospace;
+    color: #ffffff;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-data{
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+.td{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-edit{
+    background-color: #5cb3f6;
+}
+
+.btn-delete{
+    background-color: #f86a6a;
+    margin-left: 10px;
+}
