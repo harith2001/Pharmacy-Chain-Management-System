@@ -1,44 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Stock = require("../models/stockSchema");
+const insertStock = require("../controller/stockerController");
 
 
-//router.get("/",(req,res)=>{
-//    console.log("connect");
-//});
 
 //insert stock
-
-router.post("/Insert",async(req,res)=>{
-   // console.log(req.body);
-
-   const{Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date} = req.body;
-
-   if(!Medicine_ID ||! Name ||!Medicine_NO ||!Expire_Date ||!Purchased_Date){
-    res.status(422).json("Please Fill The Data");
-   }
-
-   try {
-
-    const prestock = await Stock.findOne({Medicine_ID:Medicine_ID});
-    console.log(prestock);
-
-    if(prestock){
-        res.status(422).json("This is stock is already added ! ");
-    }else{
-        const addstock = new Stock({
-            Medicine_ID, Name, Medicine_NO,Expire_Date,Purchased_Date
-        });
-
-        await addstock.save();
-        res.status(201).json(addstock);
-        console.log(addstock);
-    }
-    
-   } catch (error) {
-    res.status(422).json(error);
-   }
-})
+router.post("/Insert", insertStock)
 
 //get all stock data
 // In this we can send get request and get all available data in the database
@@ -118,28 +86,13 @@ router.get("/searchdata/:Medicine_ID",async(req,res)=>{
     }
 })
 
-//Low Stock Notification 
-
-/*const Low_Stock = 100;
-router.get("/lowalert",async(req,res)=>{
-    try {
-   
-        const stockalert = await Stock.find();
-        console.log(stockalert);
-
-        stockalert.forEach( stockalert =>{
-            if(stockalert.Medicine_NO<Low_Stock){
-                console.log("low stock alert :${stockalert.Medicine_ID}");
-            }  
-        });
-        res.status(201).json(stockalert)
-
-    } catch (error) {
-            res.status(422).json(error)     
+// test route
+router.get("/test", async(req, res) => {
+    try{
+        res.json("Harith server")
+    }catch(error){
+        console.log(error);
     }
 })
-*/
-
-
 
 module.exports = router;
