@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* 
+
+.VNavbaar{
+  display: flex;
+  flex-direction: column;
+  height: 100vh ;
+  width: 200px;
+  position: absolute;
+  background-color: #042c35;
+  padding-top: 60px;
+ 
+}
+
+.VNavbaar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.VNavbaar li{
+  text-align: center;
+  border-bottom: 1px soild #ddd;
+}
+
+.VNavbaar li a{
+  display: block;
+  color:#eeebeb;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.VNavbaar a:hover{
+  background-color:#b3f1c4;
+}
+
+.VNavbaar img{
+    
+  height:100px;
+  width:120px;
+}
+.HNavbaar{
+  display: flex;
+  background-color: #d9d9d9;
+  height: 150px;
+  min-width: 83.5%;
+  margin-left: 200px;
+  position: absolute;
+  align-items: center;
+}
+
+.HNavbaar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.HNavbaar li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.HNavbaar a{
+  display: block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.HNavbaar a:hover{
+  background-color: #ddd;
+} */

@@ -1,0 +1,176 @@
+
+/* .app{
+    display: flex; 
+    flex-direction: row;   
+} */
+
+/* Vertical Navigation Bar CSS*/
+.VNavbaar{
+  display: flex;
+  flex-direction: column;
+  height: 100vh ;
+  width: 200px;
+  position: absolute;
+  background-color: #042c35;
+  bottom: 0;
+ 
+}
+
+.VNavbaar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.VNavbaar li{
+  text-align: center;
+  border-bottom: 1px soild #ddd;
+}
+
+.VNavbaar li a{
+  display: block;
+  color:#eeebeb;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.VNavbaar a:hover{
+  background-color:#b3f1c4;
+}
+
+.VNavbaar img{
+  margin-top: 10px;
+  height: 100px;
+  width: 120px;
+}
+
+/*table CSS*/
+/* .h2{
+  margin-left: 220px;
+  margin-top: 200px;
+}
+.home{
+  margin-left: 220px;
+}
+.table{
+  margin-top: 130px;
+  display: inline-block;  
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,td{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+} */
+
+/*Horizontal Navigation bar CSS*/
+
+/* .HNavbaar{
+  display: flex;
+  background-color: #d9d9d9;
+  height: 150px;
+  min-width: 84.5%;
+  margin-left: 200px;
+  position: absolute;
+  align-items: center;
+}
+
+.HNavbaar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.HNavbaar li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.HNavbaar a{
+  display: block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.HNavbaar a:hover{
+  background-color: #ddd;
+} */
+
+
+/*Insert Page CSS*/
+/* .insert{
+  margin-left: 220px ;
+  margin-top: 10px;
+  align-items: center;
+} */
+
+/* .submit{
+  display: inline-block;
+  margin-right: 10px;
+  align-items: center;
+} */
+
+/*details Page CSS */
+
+.details{
+  margin-left: 220px ;
+  margin-top: 0;
+  align-items: center;
+}
+
+
+/* Edit/Update Page CSS*/
+.edit{
+  margin-left: 220px ;
+  margin-top: 150px;
+  align-items: center;
+}
+
+/* PDF Button*/
+.PDF{
+  margin-left: 800px;
+  height: 30px;
+  width: 150px;
+  background-color: #011A81;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/*Search*/
+.search{
+  margin-top: 10px;
+  margin-left: 550px;
+  border: none;
+  background-color: rgb(212, 208, 208);
+}
+
+.search-btn{
+  border: none;
+}
+
+.Stable{
+
+  display: inline-block;  
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+  align-items: center;
+}
+
+th,td{
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+}
+th{
+  background-color: #1a1919;
+  align-items: center;
+}
+
