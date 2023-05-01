@@ -1,0 +1,285 @@
+.template {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-weight: bold;
+
+}
+
+div {
+  font-weight: bold;
+}
+
+.bold-extra {
+  font-weight: 900;
+}
+
+.side_bar {
+  display: flex;
+  position: fixed;
+  top: 0rem;
+
+  height: 100vh;
+  width: 200px;
+  
+
+  background-color: #042C35;
+  padding-top: 10px;
+
+ 
+  flex-direction: column;
+  
+
+  
+
+
+}
+div.container{
+  max-width: 1000px;
+  padding-left: 10px;
+}
+
+
+.table{
+  background-color: #b3f1c4;
+  width: 100px;
+}
+.row{
+  width: 80%;
+}
+
+/*
+.side_bar li {
+  position: sticky;
+  padding-top: 30px;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 10%;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.side_bar ul {
+  float: left;
+
+}*/
+.side_bar img{
+  margin-top: 10px;
+  width: 120px;
+  height: 100px;
+}
+
+.add_btn {
+  text-align: right
+}
+
+.quantity {
+  margin-left: 2cm;
+}
+
+.row_order {
+  margin-top: 10%;
+  margin-left: 30%;
+
+  align-items: center;
+
+}
+
+
+
+.navbar {
+
+
+
+  z-index: 999;
+  background-color: #d9d9d9;
+  right: 0;
+  width: 83.5%;
+  margin-left: 200px;
+color: black;
+height: 100px;
+
+
+}
+.navbar h5{
+
+    position: absolute;
+    top: 5px;
+    left: 50px;
+  
+}
+.navbar li{
+  margin-top: 5%;
+}
+
+.d-flex {
+  float: right;
+
+
+
+}
+
+.nav-item {
+
+  color: aliceblue;
+  margin-left: 100px;
+  transition: background-color 0.1s ease-in-out;
+
+
+}
+
+.nav-item:hover {
+  background-color: #007bff;
+  border-radius: 10px;
+  color: #ffffff;
+
+
+}
+
+
+
+.nav-link {
+  color: white;
+}
+
+.active {
+  background-color: #4898ae;
+  border-radius: 10px;
+
+}
+
+
+
+.container {
+  position: relative;
+  left: 180px;
+  top: 160px;
+
+}
+
+
+h1,h4 {
+  text-align: center;
+}
+
+.order {
+  text-align: center;
+
+}
+
+.row_order {
+  position: relative;
+  margin-left: 0%;
+
+  text-align: center;
+
+  text-align: center;
+}
+
+.select {
+
+  position: relative;
+  left: 30%;
+}
+
+tr:nth-child(odd) {
+  background-color: #d9d9d9;
+
+}
+
+
+tr:nth-child(even) {
+  background-color: white;
+  
+}
+
+input,
+option{
+
+  background: linear-gradient(to right, #d9d9d9, #dce7e9),
+  
+    #ffffff;
+}
+
+
+
+.form-check-input {
+  border-width: 3px;
+}
+
+.medlist option{
+ background-color: #93c4cf;
+}
+.medlist input,option{
+  
+  border: "1px solid black";
+  border-radius: 5px;
+}
+.overflow-y-scroll {
+  border: 1px solid black;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 5px;
+  width: 600px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+textarea {
+  height: 100pxpx;
+  width: 50%;
+  resize: none;
+ background: linear-gradient(to right, #d9d9d9, #dce7e9), #ffffff; 
+  border: 1px solid black; 
+  padding: 10px; 
+  
+}
+
+
+/* Vertical Navigation Bar CSS*/
+/*
+.side_bar{
+  display: flex;
+  position: fixed;
+ 
+  flex-direction: column;
+  height: 100vh ;
+  width: 200px;
+  position: absolute;
+  background-color: #042c35;
+
+ 
+}*/
+
+.side_bar ul{
+  margin-top: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side_bar li{
+  position: sticky;
+  text-align: center;
+  border-bottom: 1px soild #ddd;
+}
+
+.side_bar li a{
+  display: block;
+  color:#eeebeb;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.side_bar a:hover{
+  background-color:#b3f1c4;
+}
