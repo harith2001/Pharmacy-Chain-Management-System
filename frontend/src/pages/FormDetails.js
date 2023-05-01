@@ -15,7 +15,7 @@ const FormDetails = () => {
 
   const getFinanceData = async (e) => {
     try {
-      const response = await fetch("http://localhost:4000/api/FinanceDetails", {
+      const response = await fetch("http://localhost:8003/finance", {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -45,7 +45,7 @@ const FormDetails = () => {
   //deleteFinanceRecord function
   const deleteFinanceRecord = async (id) => {
     const response1 = await fetch(
-      `http://localhost:4000/api/FinanceDetails/${id}`,
+      `http://localhost:8003/finance/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -94,7 +94,7 @@ const FormDetails = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/FinanceDetails/search`,
+        `http://localhost:8003/finance/search`,
         {
           method: "POST",
           body: JSON.stringify({ query: body }),

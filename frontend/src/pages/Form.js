@@ -54,13 +54,14 @@ const Form = () => {
         branchId,
       };
 
-      const response = await fetch("http://localhost:4000/api/FinanceDetails", {
+      const response = await fetch("http://localhost:8003/finance", {
         method: "POST",
         body: JSON.stringify(financeRecord),
         headers: {
           "Content-Type": "application/json",
         },
       });
+
       const json = await response.json();
 
       if (!response.ok) {
@@ -127,7 +128,7 @@ const Form = () => {
         </div>
         <div className="form-sub-container">
           <div>
-            <label className="form-label">Enter amount</label>
+            <label className="form-label">Enter amount (LKR)</label>
           </div>
           <div>
             <input

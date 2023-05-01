@@ -1,8 +1,8 @@
 .HNavbaar{
     display: flex;
     background-color: #d9d9d9;
-    height: 150px;
-    min-width: 83.5%;
+    height: 100px;
+    max-width: 83.5%;
     margin-left: 200px;
     /*position: absolute;*/
     align-items: center;
@@ -17,21 +17,20 @@
 .h2{
     font-weight: 500;
     margin-left: 10px;
+    font-size: 20px;
 }
 
 .button-container{
     margin-left: 5px;
-    margin-top: 20px;
 }
 
 .li{
-    display: inline-block;
+    display: inline;
 }
 
 .a{
     display: block;
     color: #333;
-    padding: 10px;
     text-decoration: none;
 }
 
@@ -83,7 +82,7 @@
     height: 22px;
     position: absolute;
     left: 10%;
-    margin-left: 265px;
+    margin-left: 290px;
     margin-top: 5px;
 }
 
@@ -93,7 +92,7 @@
     font-weight: bold;
 }
 
-.btn-edit{
+/* .btn-edit{
     background-color: #53b3f6;
     margin-left: 10px;
 }
@@ -102,10 +101,10 @@
     height: 30px;
     width: 70px;
     border: none;
-}
+} */
 
 .btn-report{
-    margin-left: 780px;
+    margin-left: 500px;
     height: 30px;
     width: 150px;
     background-color: #011A81;

@@ -115,7 +115,7 @@ const FinanceChart = () => {
           {chartType === 'week' && (
             <Bar
             data={dataWeek} 
-            height={590}
+            height={480}
             width={1500}
             options={options}
             />
@@ -124,7 +124,7 @@ const FinanceChart = () => {
           {chartType === 'month' && (
             <Bar
             data={dataMonth} 
-            height={590}
+            height={480}
             width={1500}
             options={options}
             />
@@ -133,7 +133,7 @@ const FinanceChart = () => {
           {chartType === 'year' && (
             <Bar
             data={dataYear} 
-            height={590}
+            height={480}
             width={1500}
             options={options}
             />

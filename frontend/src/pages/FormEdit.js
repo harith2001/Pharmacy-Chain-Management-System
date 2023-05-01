@@ -26,7 +26,7 @@ const FormEdit = () => {
 
   const getData = async (e) => {
     const response = await fetch(
-      `http://localhost:4000/api/FinanceDetails/${id}`,
+      `http://localhost:8003/finance/${id}`,
       {
         method: "GET",
         headers: {
@@ -74,7 +74,7 @@ const FormEdit = () => {
     });
 
     const response1 = await fetch(
-      `http://localhost:4000/api/FinanceDetails/${id}`,
+      `http://localhost:8003/finance/${id}`,
       {
         method: "PUT",
         headers: {

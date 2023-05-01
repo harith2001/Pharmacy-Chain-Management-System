@@ -56,7 +56,7 @@ const FormTwo = () => {
     try {
       if (excelData != null) {
         const response = await fetch(
-          "http://localhost:4000/api/FinanceDetails/batch",
+          "http://localhost:8003/finance/batch",
           {
             method: "POST",
             body: JSON.stringify({ data: excelData }),

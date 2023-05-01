@@ -4,9 +4,9 @@
     /*border: 5px;
     border-style: solid;
     border-color: blue;*/
-    margin-top: 70px;
-    margin-left: 500px;
-    height: 500px;
+    margin-top: 5px;
+    margin-left: 480px;
+    height: 400px;
     width: 500px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .btn-container{
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 60px;
 }
 
