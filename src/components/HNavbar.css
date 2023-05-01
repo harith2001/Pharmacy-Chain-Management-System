@@ -1,0 +1,115 @@
+.HNavbaar{
+    display: flex;
+    background-color: #d9d9d9;
+    height: 100px;
+    max-width: 83.5%;
+    margin-left: 200px;
+    /*position: absolute;*/
+    align-items: center;
+}
+
+.ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.h2{
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.button-container{
+    margin-left: 5px;
+}
+
+.li{
+    display: inline;
+}
+
+.a{
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.a:hover{
+    background-color: #ddd;
+} 
+
+.d-flex{
+    margin-left: 10px;
+}
+
+.search-bar{
+    height: 30px;
+    width: 250px;
+    border: none;
+}
+
+.btn{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 5px;
+}
+
+.underline-onclick{
+    text-decoration: none;
+    border: none;
+}
+
+.underline-onclick:hover{
+    text-decoration: underline;
+    color: #042c35;
+}
+
+.underline-onclick:active{
+    text-decoration: underline;
+    color: #042c35;
+}
+
+.btn-details{
+    background: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.vertical-line{
+    border-right: 1px solid black;
+    height: 22px;
+    position: absolute;
+    left: 10%;
+    margin-left: 145px;
+    margin-top: 5px;
+}
+
+.btn-add{
+    background-color: #49be69;
+    margin-left: 15px;
+    font-weight: bold;
+    padding: 2px;
+}
+
+/* .btn-edit{
+    background-color: #53b3f6;
+    margin-left: 10px;
+}
+
+.btn-search{
+    height: 30px;
+    width: 70px;
+    border: none;
+} */
+
+.PDF{
+    margin-left: 1050px;
+    height: 30px;
+    width: 150px;
+    background-color: #011A81;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
