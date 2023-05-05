@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom';
 import './Details.css'
+import { toast } from 'react-toastify';
 
 const Search = () => {
   const [getsearchdata, setsearchdata] = useState({});
@@ -26,11 +27,13 @@ const Search = () => {
     if (!data) {
       console.log("empty data");
       if(res.status === 422){
-        console.log("error");
+        toast("Invalid Data !");
+        //console.log("error");
       }
     } else {
       setsearchdata(data)
-      console.log("Successful response recieved");
+      toast.success("Successfully Searched !")
+      //console.log("Successful response recieved");
     }
   }
 

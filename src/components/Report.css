@@ -1,0 +1,31 @@
+.title{
+    margin-left: 250px;
+    font-size: 50px;
+}
+
+.logo{
+
+    margin-left: 250px;
+    height: 100px;
+    width: 100px;
+}
+
+.S2{
+    margin-left: 250px;
+    font-size: 30px;
+}
+
+.total{
+    margin-left: 250px;
+    font-size: 10x;
+}
+
+.PDF{
+    margin-left: 1050px;
+    height: 40px;
+    width: 150px;
+    background-color: #011A81;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

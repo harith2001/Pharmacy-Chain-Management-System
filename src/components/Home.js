@@ -1,11 +1,13 @@
-import React, { useEffect,useState,useRef } from "react";
+import React, { useEffect,useState} from "react";
 import { NavLink } from "react-router-dom";
-import { useReactToPrint } from "react-to-print";
+import {toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./HNavbar.css"
 import "./Details.css"
 
 
 const Home = () => {
+ 
 
   const [getstockdata, setStockdata] = useState([]);
   console.log(getstockdata);
@@ -29,15 +31,21 @@ const Home = () => {
       console.log("error");
     }else{
       setStockdata(data)
-      //console.log("get data ");
+      //console.log("get data");
     }
 
    // Low Stock Alert Function for Manage The Stock Levels
 
     getstockdata.forEach(data => {
       if(data.Medicine_NO<Low_Stock){
-        alert (`Low Stock alert : ${data.Medicine_ID} has only : ${data.Medicine_NO} units Remaining Please Re-Order !`);
-        //console.log("alert");
+
+        toast.warn (`Low Stock alert : ${data.Medicine_ID} has only : ${data.Medicine_NO} units Remaining Please Re-Order !`,{
+          position:"top-right",
+          autoClose:5000,
+          theme:"dark",
+          draggable:true,
+          delay:600000,//6000
+        });
       }
       
     });
@@ -48,23 +56,11 @@ const Home = () => {
     getpdata();
   },[])
 
- //PDF Generate
-//
-  const componentPDF = useRef();
-  const generatePDF = useReactToPrint({
-    content:()=> componentPDF.current,
-    documentTitle:"Stock Details",
-    onAfterPrint:()=>alert("Data Printed in PDF")
-  });
-
- setInterval(getpdata,60000000); 
+setInterval(getpdata,6000000); //60000 = 1 min
 
  return (
 
   <div className ="home">
-<div ref ={componentPDF} style={{width:'100%'}}>
-
-  {/* <h2 className="h2">Stock Details</h2> */}
 
  <table className="table">
   <thead>
@@ -99,10 +95,6 @@ const Home = () => {
     }
   </tbody>
   </table>
-  </div>
-  <div>
-  <button className="PDF" onClick={generatePDF}>Genarate Report</button></div>
- 
   </div>);
 };
 

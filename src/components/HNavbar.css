@@ -2,7 +2,7 @@
     display: flex;
     background-color: #d9d9d9;
     height: 100px;
-    max-width: 83.5%;
+    max-width: 89%;
     margin-left: 200px;
     /*position: absolute;*/
     align-items: center;
@@ -17,7 +17,7 @@
 .h2{
     font-weight: 500;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .button-container{
@@ -79,10 +79,10 @@
 
 .vertical-line{
     border-right: 1px solid black;
-    height: 22px;
+    height: 25px;
     position: absolute;
     left: 10%;
-    margin-left: 145px;
+    margin-left: 120px;
     margin-top: 5px;
 }
 
@@ -91,7 +91,11 @@
     margin-left: 15px;
     font-weight: bold;
 }
-
+.btn-report{
+    background-color: #49be69;
+    margin-left: 15px;
+    font-weight: bold;
+}
 /* .btn-edit{
     background-color: #53b3f6;
     margin-left: 10px;
@@ -103,7 +107,7 @@
     border: none;
 } */
 
-.PDF{
+/* .PDF{
     margin-left: 1050px;
     height: 30px;
     width: 150px;
@@ -111,4 +115,4 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-}
+} */

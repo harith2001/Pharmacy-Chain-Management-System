@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import{NavLink, useNavigate} from 'react-router-dom'
 import './Insert.css'
+import { toast } from 'react-toastify';
 
 const Insert = () => {
 
@@ -46,12 +47,12 @@ const Insert = () => {
     console.log(data);
 
     if (res.status ===422|| !data){
-      alert("error: Insert data ");
-      console.log("error");
+      toast.error("Insert Data !");
+      //console.log("error");
     }else{
-      alert("data added ");
+      toast.success("Stock Added Successfully !");
       navigate("/")
-      console.log("data added");
+      //console.log("data added");
 
     }
 
@@ -62,7 +63,7 @@ const Insert = () => {
 <form className="form-class">
   <div className="form-sub-container">
     <label for="MedicineID" className="form-label">Medicine ID</label>
-    <input type="text" className="form-text" value={inpval.Medicine_ID} onChange={setdata} id="Medicine_ID"/>
+    <input type="text" placeholder="MD..."className="form-text" value={inpval.Medicine_ID} onChange={setdata} id="Medicine_ID"/>
   </div>
   <div className="form-sub-container">
     <label for="MedicineName" className="form-label">Medicine Name</label>

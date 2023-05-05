@@ -2,6 +2,7 @@ import React, { useEffect,useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Details.css"
+import { toast } from "react-toastify";
 
 const Details = () => {
 
@@ -26,10 +27,10 @@ const Details = () => {
     console.log(data);
 
     if (res.status ===422|| !data){
-      console.log("error");
+      //console.log("error");
     }else{
       setStockdata(data)
-      console.log("get data ");
+      //console.log("get data ");
     }
   } 
 
@@ -50,9 +51,9 @@ const Details = () => {
     if(res2.status===422||!deletedata){
       console.log("error");
     }else{
-      alert("Stock Data Deleted");
+      toast.warn("Stock Deleted Successfully !");
       navigate("/")
-      console.log("stock deleted ");
+      //console.log("stock deleted ");
       getdata();
     }
   }

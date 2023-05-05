@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import {useParams,useNavigate} from "react-router-dom";
 import './Insert.css'
+import { toast } from 'react-toastify';
 
 const Edit = () => {
 
@@ -78,9 +79,9 @@ const Edit = () => {
         console.log(data2);
 
         if(res2.status === 422||!data2){
-          alert("fill the data")
+          toast.error("Update Stock Correctlty !")
         }else{
-          alert("data added")
+          toast.success("Stock Updated Successfully !")
           navigate("/")
         }
       }

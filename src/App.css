@@ -133,15 +133,6 @@ th,td{
 }
 
 /* PDF Button*/
-.PDF{
-    margin-left: 1050px;
-    height: 30px;
-    width: 150px;
-    background-color: #011A81;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
 
 /*Search*/
 .search{
