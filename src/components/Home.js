@@ -4,7 +4,8 @@ import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./HNavbar.css"
 import "./Details.css"
-
+import VNavbaar from './VNavbaar';
+import HNavbaar from './HNavbaar';
 
 const Home = () => {
  
@@ -44,7 +45,7 @@ const Home = () => {
           autoClose:5000,
           theme:"dark",
           draggable:true,
-          delay:600000,//6000
+          delay:6000,//6000
         });
       }
       
@@ -56,11 +57,13 @@ const Home = () => {
     getpdata();
   },[])
 
-setInterval(getpdata,6000000); //60000 = 1 min
+setInterval(getpdata,60000); //60000 = 1 min
 
  return (
 
   <div className ="home">
+  <VNavbaar/>
+    <HNavbaar/>
 
  <table className="table">
   <thead>

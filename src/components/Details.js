@@ -3,6 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Details.css"
 import { toast } from "react-toastify";
+import HNavbaar from "./HNavbaar";
+import VNavbaar from "./VNavbaar";
+import "./HNavbar.css"
+import "./VNavbar.css"
 
 const Details = () => {
 
@@ -63,8 +67,11 @@ const Details = () => {
   const date2 = String(getstockdata.Purchased_Date).split("T")[0];
 
   return (
-    <div className='table-container'>
-      
+
+<div>
+<VNavbaar/>
+<HNavbaar/>
+<div className='table-container'>
 <table class="table">
   <thead>
     <tr className ="table-head">
@@ -93,6 +100,7 @@ const Details = () => {
           </>
     </tbody>  
     </table>
+    </div>
     </div>
 
 )}

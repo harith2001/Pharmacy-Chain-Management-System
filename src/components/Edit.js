@@ -2,6 +2,12 @@ import React,{useEffect, useState} from 'react'
 import {useParams,useNavigate} from "react-router-dom";
 import './Insert.css'
 import { toast } from 'react-toastify';
+import HNavbaar from './HNavbaar';
+import VNavbaar from './VNavbaar';
+import "./HNavbar.css"
+import "./VNavbar.css"
+
+
 
 const Edit = () => {
 
@@ -87,6 +93,9 @@ const Edit = () => {
       }
 
     return (
+      <div>
+        <HNavbaar/>
+        <VNavbaar/>
     <div className='form-container'>
     <form class="form-class">
       <div class="form-sub-container">
@@ -115,6 +124,7 @@ const Edit = () => {
       </div>
     </form>
     
+        </div>
         </div>
       )
     }
