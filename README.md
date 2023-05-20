@@ -1,6 +1,7 @@
 # ITP_FINAL_G02
 # Project Name - Pharmacy Chain Management System
 # Batch - ITP_WD_B01_01
+# Group - 02
 ### Group Leader - IT21576966 - Weedagamaarachchi K.S (Kavith2001)
 ### Member 2 - IT21308284 - Vithanage H.D (harith2001)
 ### Member 3 - IT21289484 - Manditha K.D.R
